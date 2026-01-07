@@ -11,6 +11,8 @@ repo_ids = {
     "vap_ch_kyoto": "maai-kyoto/vap_ch_kyoto",
     "vap_tri_kyoto": "maai-kyoto/vap_tri_kyoto",
 
+    "vap_ca": "maai-kyoto/vap_ca",
+
     "vap_mc_jp": "maai-kyoto/vap_mc_jp",
     "vap_mc_en": "maai-kyoto/vap_mc_en",
     "vap_mc_ch": "maai-kyoto/vap_mc_ch",
@@ -65,6 +67,10 @@ def load_vap_model(mode: str, frame_rate: int, context_len_sec: float, language:
         elif language == "tri_kyoto":
             repo_id = repo_ids["vap_tri_kyoto"]
             file_path = f"vap_state_dict_tri_kyoto_{frame_rate}hz_{int(context_len_sec*1000)}msec.pt"
+        
+        elif language == "ca":
+            repo_id = repo_ids["vap_ca"]
+            file_path = f"vap_state_dict_ca_{frame_rate}hz_{int(context_len_sec*1000)}msec.pt"
         
         else:
             supported_languages = ["jp", "en", "ch", "tri", "jp_kyoto", "en_kyoto", "ch_kyoto", "tri_kyoto"]
