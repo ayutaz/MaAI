@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc:*)",
+      "Bash(uv venv:*)",
+      "Bash(uv add:*)",
+      "Bash(uv run python:*)",
+      "Bash(uv run:*)",
+      "Bash(set:*)",
+      "Bash(PYTHONUTF8=1 uv run:*)",
+      "Bash(ffmpeg:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(git remote add:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd dev environment config and remove hardcoded local model path\n\n- Remove hardcoded local_model path from vap_2wav.py example\n- Add uv workspace and dev dependency config to pyproject.toml\n- Add CLAUDE.md and .claude/ for Claude Code guidance\n- Add uv.lock\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
+    ]
+  }
+}

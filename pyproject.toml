@@ -38,5 +38,18 @@ include = ["src/**"]
 [tool.hatch.build.targets.wheel]
 packages = ["src/maai"]
 
+[tool.uv.workspace]
+members = [
+    ".",
+]
+
+[tool.uv.sources]
+maai = { workspace = true, editable = true }
+
+[dependency-groups]
+dev = [
+    "maai",
+]
+
 [project.urls]
 Homepage = "https://github.com/MaAI-Kyoto/MaAI"

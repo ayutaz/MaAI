@@ -28,7 +28,6 @@ def test():
         audio_ch1=wav1,
         audio_ch2=wav2,
         device="cpu",
-        local_model="C:\\Users\\inoue\\Desktop\\state_dict_maai\\vap_mc_state_dict_jp_10hz_5000msec_zero_arg.pt"
     )
 
     maai.start()
