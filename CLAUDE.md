@@ -9,11 +9,11 @@ MaAI（間合い）は、リアルタイム・連続的な非言語行動生成�
 ## ビルド・インストール
 
 ```bash
-# パッケージインストール
-pip install maai
+# 依存関係のインストール
+uv sync
 
-# 開発用（ソースから）
-pip install -e .
+# 新しいパッケージの追加
+uv add <パッケージ名>
 
 # パッケージビルド
 hatch build
@@ -25,8 +25,8 @@ hatch build
 
 ```bash
 cd train
-pip install -r requirements-train.txt
-python train.py \
+uv add -r requirements-train.txt
+uv run python train.py \
     --data_train_path sample/train.csv \
     --data_val_path sample/valid.csv \
     --data_test_path sample/test.csv \
@@ -37,7 +37,7 @@ python train.py \
     --opt_saved_dir ./trained_data/
 
 # 評価
-python evaluation.py --data_test_path sample/test.csv --checkpoint ./trained_data/
+uv run python evaluation.py --data_test_path sample/test.csv --checkpoint ./trained_data/
 ```
 
 トレーニングはPyTorch Lightningベース。
